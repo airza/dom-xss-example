@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Page One</title>
+	<style type="text/css">
+a {
+    font-family: sans-serif;
+    border: 1px black solid;
+    margin: 10px;
+}
+
+	</style>
+	<script>
+		let help1= {
+			type:'nav',
+			destination:'help1.html'
+		}
+		let help2= {
+			type:'nav',
+			destination:'help2.html'
+		}
+		let home= {
+			type:'nav',
+			destination:'home.html'
+		}
+		let back= {
+			type:'back'
+		}
+		let forward = {
+			type:'forward'
+		}
+		var iframe;
+		document.addEventListener("DOMContentLoaded", ()=>{
+			iframe = document.getElementsByTagName("iframe")[0]
+		});
+	</script>
+</head>
+<body>
+	<div class="navigtation">
+	<a href="#" onClick="iframe.contentWindow.postMessage(help1)">Help1</a>
+	<a href="#" onClick="iframe.contentWindow.postMessage(help2)">Help2</a>
+	<a href="#" onClick="iframe.contentWindow.postMessage(back)">Back</a>
+	<a href="#" onClick="iframe.contentWindow.postMessage(forward)">Forward</a>
+	<a href="#" onClick="iframe.contentWindow.postMessage(home)">Home</a>
+</div>
+<iframe src="home.html">
+</body>
+</html>
